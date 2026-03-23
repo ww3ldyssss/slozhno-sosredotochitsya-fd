@@ -1,5 +1,821 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image);
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #000028;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  height: 100vh;
+  inline-size: 1024px;
+  max-block-size: 768px;
+  margin-block-start: 20px;
+  margin-right: 20px;
+}
+
+.header::before {
+  content: "";
+  display: flex;
+  justify-self: end;
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  margin-right: 20px;
+}
+
+.header::after {
+  content: "";
+  display: flex;
+  align-self: end;
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);;
+  margin-block-end: 20px;
+  margin-left: 20px;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-self: center;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border: none;
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-item {
+  font-family: var(--main-font-family);
+  font-weight: var(--text-font-weight);
+  font-size: var(--main-font-size);
+  line-height: 18px;
+  color: var(--accent-color);
+}
+
+.decorated-zone__REC {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  right: 9px;
+  gap: 8px;
+  font-family: var(--main-font-family);
+  font-weight:  var(--text-font-weight);
+  font-size: var(--main-font-size);
+  line-height: 25px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.decorated-zone__REC::after {
+  content: "";
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+}
+
+.decorated-zone__no-focus {
+  display: flex;
+  align-self: center;
+  max-inline-size: 759px;
+  max-block-size: 130px;
+  font-family: var(--main-font-family);
+  font-weight: var(--title-font-weight);
+  font-size: 157px;
+  line-height: 83%;
+  color: var(--decoration-color);
+  text-shadow: 4px 4px 0 var(--title-bg-color);
+}
+
+.title-decor {
+  font-family: var(--main-font-family);
+  font-weight: var(--title-font-weight);
+  font-size: var(--main-font-size);
+  color: var(--title-text-color);
+  background-color: var(--title-bg-color);
+  line-height: 23.4px;
+}
+
+.decorated-zone__title {
+  display: flex;
+  justify-self: end;
+  white-space: pre-line;
+  max-inline-size: 491px;
+  max-block-size: 71px;
+  margin-right: 20px;
+}
+
+.main {
+  margin-block-start: 60px;
+  margin-block-end: 60px;
+  max-inline-size: 1024px;
+  block-size: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.section-card-why {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.title-section {
+  font-family: var(--main-font-family);
+  font-weight: var(--title-font-weight);
+  font-size: var(--main-font-size);
+  line-height: 23.4px;
+  color: var(--accent-color);
+}
+
+.title-section-why {
+  inline-size: 314px;
+  block-size: 47px;
+}
+
+.title-section-group-why {
+  inline-size: 649px;
+  block-size: 23px;
+  margin-block-end: 10px;
+}
+
+.text-section-group-why {
+  inline-size: 649px;
+  block-size: 211px;
+  color: var(--text-color);
+  font-family: var(--main-font-family);
+  font-weight: var(--text-font-weight);
+  font-size: var(--main-font-size);
+  line-height: 23.4px;
+}
+
+.decoration-link {
+  text-shadow: 2px 2px 0px var(--title-bg-color);
+}
+
+.section-group-dopamine {
+  display: grid;
+  grid-column: 2;
+  margin-block-start: 20px;
+}
+
+.section-card-what {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-block-start: 80px;
+  margin-block-end: 80px;
+  max-inline-size: 1024px;
+  max-block-size: 498px;
+}
+
+.section-card-group-what {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-row: 2;
+  gap: 20px;
+  max-inline-size: 984px;
+  max-block-size: 431px;
+}
+
+.title-section-what {
+  inline-size: 315px;
+  block-size: 47px;
+  margin-block-end: 20px;
+
+}
+
+.title-section-group-what {
+  inline-size: 315px;
+  block-size: 23px;
+  font-family: var(--main-font-family);
+  font-weight: var(--title-font-weight);
+  font-size: var(--main-font-size);
+  color: var(--title-text-color);
+  line-height: 23.4px;
+  margin-block-end: 10px;
+}
+
+.text-section-group-what {
+  font-family: var(--main-font-family);
+  font-weight: var(--text-font-weight);
+  font-size: var(--main-font-size);
+  color: var(--text-color);
+  line-height: 23.4px;
+}
+
+.text-section-group-concentration {
+  max-inline-size: 315px;
+  max-block-size: 351px;
+}
+
+.text-section-group-meal {
+  max-inline-size: 315px;
+  max-block-size: 361px;
+}
+
+.text-section-group-gadgets {
+  max-inline-size: 315px;
+  max-block-size: 431px;
+}
+
+.section-card-how {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-inline-size: 1024px;
+  block-size: 1015px;
+  margin-block-end: 80px;
+}
+
+.title-section-how {
+  inline-size: 315px;
+  max-block-size: 98px;
+}
+
+.section-content-group-how {
+  inline-size: 649px;
+  max-block-size: 1015px;
+}
+
+.section-card-group-how-imagine {
+  margin-block-start: 20px;
+  margin-block-end: 20px;
+}
+
+.title-section-group-how {
+  font-family: var(--main-font-family);
+  font-weight: var(--text-font-weight);
+  font-size: var(--main-font-size);
+  background-color: var(--title-bg-color);
+  color: var(--title-text-color);
+  line-height: 23.4px;
+  margin-block-end: 10px;
+}
+
+.text-section-group-how {
+  font-family: var(--main-font-family);
+  font-weight: var(--text-font-weight);
+  font-size: var(--main-font-size);
+  color: var(--text-color);
+  line-height: 23.4px;
+}
+
+.section-card-group-how-take_a_walk {
+  margin-block-start: 20px;
+  margin-block-end: 20px;
+}
+
+.section-card-group-how-read_it {
+  margin-block-start: 20px;
+}
+
+.section-card-gallery {
+  max-inline-size: 1024px;
+  block-size: 1091px;
+  margin-block-end: 60px;
+}
+
+.title-section-gallery {
+  margin-block-end: 20px;
+}
+
+.section-content-group-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  max-inline-size: 984px;
+}
+
+.gallery-image {
+  max-inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+
+.gallery-image_sunset {
+  inline-size: 650px;
+  block-size: 260px;
+  grid-column: 1/3;
+}
+
+.gallery-image_ice_cream {
+  inline-size: 314px;
+  block-size: 595px;
+  grid-column: 3/3;
+  grid-row: 1/3;
+}
+
+.gallery-image_tape {
+  inline-size: 315px;
+  block-size: 768px;
+  grid-column: 1;
+  grid-row: 2/4;
+}
+
+.gallery-image_books {
+  inline-size: 315px;
+  block-size: 315px;
+}
+
+.gallery-image_street {
+  inline-size: 649px;
+  block-size: 433px;
+  grid-column: 2/4;
+}
+
+.footer {
+  display: grid;
+  max-inline-size: 1024px;
+  block-size: 768px;
+}
+
+.decorated-zone__focus {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  max-inline-size: 471px;
+  max-block-size: 130px;
+  font-family: var(--main-font-family);
+  font-weight: var(--title-font-weight);
+  font-size: 157px;
+  line-height: 83%;
+  color: var(--decoration-color);
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.footer::before {
+  content: "";
+  display: flex;
+  justify-self: end;
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  margin-right: 20px;
+}
+
+.footer::after {
+  content: "";
+  display: flex;
+  align-self: end;
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);;
+  margin-block-end: 20px;
+  margin-left: 20px;
+}
+
+@media (width <= 768px) {
+  .header {
+    max-inline-size: 768px;
+    block-size: 1024px;
+  }
+
+  .header__theme-menu {
+    display: flex;
+    justify-content: end;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    margin-right: 20px;
+  }
+
+  .decorated-zone__no-focus {
+    max-inline-size: 577px;
+    block-size: 99px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .decorated-zone__title {
+    max-inline-size: 364px;
+    max-block-size: 117px;
+    align-self: center;
+  }
+
+  .main {
+    max-inline-size: 768px;
+  }
+
+  .section-card-why {
+    max-inline-size: 768px;
+    block-size: 648px;
+  }
+
+  .title-section-why {
+    max-inline-size: 236px;
+    block-size: 71px;
+  }
+
+  .title-section-group-why {
+    max-inline-size: 472px;
+    block-size: 23px;
+  }
+
+  .title-section-group-multitasking {
+    margin-block-end: 10px;
+  }
+
+  .title-section-group-dopamine {
+    margin-block-end: 10px;
+  }
+
+  .text-section-group-multitasking {
+    max-inline-size: 472px;
+    block-size: 281px;
+  }
+
+  .text-section-group-why-dopamine  {
+    max-inline-size: 472px;
+    block-size: 281px;
+  }
+
+  .section-group-multitasking {
+    max-inline-size: 472px;
+    max-block-size: 314px;
+  }
+
+  .section-group-dopamine {
+    max-inline-size: 472px;
+    max-block-size: 314px;
+    margin-block-start: 0px;
+  }
+
+  .section-card-what {
+    max-inline-size: 768px;
+    max-block-size: 675px;
+  }
+
+  .section-card-group-what {
+    grid-template-columns: none;
+    grid-template-rows: auto;
+    max-inline-size: 728px;
+    max-block-size: 675px;
+  }
+
+  .title-section-what {
+    max-inline-size: 236px;
+    block-size: 70px;
+  }
+
+  .title-section-group-what {
+    inline-size: 728px;
+    max-block-size: 23px;
+    margin-block-end: 10px;
+  }
+
+  .text-section-group-concentration {
+    max-inline-size: 728px;
+    max-block-size: 141px;
+  }
+
+  .text-section-group-meal {
+    max-inline-size: 728px;
+    max-block-size: 141px;
+  }
+
+  .text-section-group-gadgets {
+    max-inline-size: 728px;
+    max-block-size: 164px;
+  }
+
+  .section-card-how {
+    max-inline-size: 768px;
+    block-size: 1296px;
+  }
+
+  .title-section-how {
+    max-inline-size: 236px;
+    max-block-size: 98px;
+  }
+
+  .section-content-group-how {
+    max-inline-size: 728px;
+    max-block-size: 1298px;
+  }
+
+  .main-title-section-group-how {
+    max-inline-size: 472px;
+    max-block-size: 23px;
+  }
+
+  .title-section-group-how {
+    max-inline-size: 472px;
+    max-block-size: 23px;
+    margin-block-end: 10px;
+  }
+
+  .text-section-group-imagine {
+    inline-size: 472px;
+    max-block-size: 280px;
+  }
+
+  .text-section-group-turn_it_on {
+    max-inline-size: 472px;
+    max-block-size: 164px;
+  }
+
+  .text-section-group-take_a_walk {
+    max-inline-size: 472px;
+    max-block-size: 257px;
+  }
+
+  .text-section-group-eat_well {
+    max-inline-size: 472px;
+    max-block-size: 163px;
+  }
+
+  .text-section-group-read_it {
+    max-inline-size: 472px;
+    max-block-size: 141px;
+  }
+}
+
+@media (width <= 375px) {
+  .header {
+    max-inline-size: 375px;
+    max-block-size: 668px;
+  }
+
+  .header::before {
+    margin-right: 10px;
+  }
+
+  .header::after {
+    margin-left: 10px;
+    margin-block-end: 0px;
+  }
+
+  .header__theme-menu-list {
+    margin-right: 10px;
+  }
+
+  .decorated-zone__REC {
+    margin-right: 10px;
+  }
+
+  .decorated-zone__no-focus {
+    max-inline-size: 355px;
+    block-size: 192px;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .decorated-zone__title {
+    max-inline-size: 355px;
+    max-block-size: 117px;
+    margin: 0px 10px;
+  }
+
+  .main {
+    max-inline-size: 375px;
+    margin: 0px 10px;
+  }
+
+  .section-card-why {
+    max-inline-size: 375px;
+    block-size: 949px;
+    margin-block-start: 40px;
+    grid-template-rows: auto 1fr 1fr;
+  }
+
+  .title-section-why {
+    max-inline-size: 355px;
+    max-block-size: 47px;
+    grid-row: 1;
+    margin-block-end: 20px;
+  }
+
+  .section-group-multitasking {
+    grid-row: 2;
+    margin-block-end: 20px;
+    max-block-size: 431px;
+  }
+
+  .section-group-dopamine {
+    grid-column: 1;
+    grid-row: 3;
+    max-block-size: 431px;
+  }
+
+  .title-section-group-why {
+    max-inline-size: 355px;
+    block-size: 23;
+  }
+
+  .text-section-group-why {
+    max-inline-size: 351px;
+    block-size: 398px;
+  }
+
+  .section-card-what {
+    max-inline-size: 375px;
+    max-block-size: 1119px;
+    margin-block-start: 50px;
+    margin-block-end: 50px;
+    grid-template-rows: auto 1fr 1fr 1fr;
+  }
+
+  .section-card-group-what {
+    max-inline-size: 355px;
+    block-size: 1119px;
+  }
+
+  .section-group-concentration {
+    max-inline-size: 355px;
+    block-size: 314px;
+    grid-row: 2;
+  }
+
+  .section-group-meal {
+    max-inline-size: 355px;
+    block-size: 314px;
+    grid-row: 3;
+  }
+
+  .section-group-gadgets {
+    max-inline-size: 355px;
+    block-size: 384px;
+    grid-row: 4;
+  }
+
+  .title-section-what {
+    max-inline-size: 355px;
+    max-block-size: 47px;
+    grid-row: 1;
+    margin: 0px;
+  }
+
+  .title-section-group-what {
+    max-inline-size: 355px;
+    max-block-size: 24px;
+  }
+
+  .text-section-group-concentration {
+    max-block-size: 281px;
+  }
+
+  .text-section-group-meal {
+    max-block-size: 281px;
+  }
+
+  .text-section-group-gadgets {
+    max-block-size: 351px;
+  }
+
+  .section-card-how {
+    max-inline-size: 375px;
+    block-size: 1737px;
+    grid-template-rows: auto auto 1fr 1fr 1fr 1fr 1fr;
+    margin-block-end: 50px;
+  }
+
+  .title-section-how {
+    max-inline-size: 355px;
+    max-block-size: 70px;
+    grid-row: 1;
+    margin-block-end: 20px;
+  }
+
+  .section-content-group-how {
+    max-inline-size: 355px;
+    max-block-size: 1647px;
+    grid-column: 1;
+  }
+
+  .main-title-section-group-how {
+    max-block-size: 47px;
+    grid-row: 2;
+  }
+
+  .section-card-group-how-imagine {
+    block-size: 408px;
+    grid-row: 3;
+  }
+
+  .section-card-group-how-turn_it_on {
+    block-size: 244px;
+    grid-row: 4;
+  }
+
+  .section-card-group-how-take_a_walk {
+    block-size: 384px;
+    grid-row: 5;
+  }
+
+  .section-card-group-how-eat_well {
+    block-size: 244px;
+    grid-row: 6;
+  }
+
+  .section-card-group-how-read_it {
+    block-size: 220px;
+    grid-row: 7;
+  }
+
+  .text-section-group-imagine {
+    max-inline-size: 355px;
+    max-block-size: 375px;
+  }
+
+  .text-section-group-turn_it_on {
+    max-inline-size: 355px;
+    max-block-size: 211px;
+  }
+
+  .text-section-group-take_a_walk {
+    max-inline-size: 355px;
+    max-block-size: 351px;
+  }
+
+  .text-section-group-eat_well {
+    max-inline-size: 355px;
+    max-block-size: 211px;
+  }
+
+  .text-section-group-read_it {
+    max-inline-size: 355px;
+    max-block-size: 187px;
+  }
+
+  .section-card-gallery {
+    max-inline-size: 375px;
+    block-size: 1400px;
+  }
+
+  .section-content-group-gallery {
+    max-inline-size: 355px;
+    max-block-size: 1400px;
+    grid-template-rows: repeat(5, auto);
+    margin-block-end: 40px;
+  }
+
+  .gallery-image_sunset {
+    max-inline-size: 355px;
+    max-block-size: 142px;
+    grid-row: 1;
+  }
+
+  .gallery-image_ice_cream {
+    min-inline-size: 355px;
+    max-block-size: 355px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .gallery-image_tape {
+    min-inline-size: 355px;
+    max-block-size: 237px;
+    grid-row: 3;
+  }
+
+  .gallery-image_books {
+    min-inline-size: 355px;
+    max-block-size: 355px;
+    grid-row: 4;
+  }
+
+  .gallery-image_street {
+    min-inline-size: 355px;
+    max-block-size: 237px;
+    grid-column: 1;
+  }
+
+  .footer {
+    max-inline-size: 375px;
+    max-block-size: 668px;
+  }
+
+  .decorated-zone__focus {
+    max-inline-size: 348px;
+    max-block-size: 96px;
+    font-size: 116px;
+  }
+
 }
