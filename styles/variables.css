@@ -1,14 +1,14 @@
 :root {
-  --bg-image: var(--bg-image-dark);
-  --accent-color: #FF0070;
-  --title-text-color: #000028;
-  --text-color: #F1B2CE;
-  --decoration-color: #DB00FF;
-  --title-bg-color: #FF0070;
   --bg-image-dark: url(../images/cover-image-dark.png);
   --bg-image-light: url(../images/cover-image-light.png);
   --main-font-size: 18px;
   --main-font-family: 'IBM Plex mono',sans-serif;
   --title-font-weight: 700;
   --text-font-weight: 400;
+  --bg-image: var(--bg-image-dark);
+  --accent-color: #FF0070;
+  --title-text-color: #000028;
+  --text-color: #F1B2CE;
+  --decoration-color: #DB00FF;
+  --title-bg-color: #FF0070;
 }

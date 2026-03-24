@@ -9,10 +9,9 @@
 
 .header {
   position: relative;
-  display: grid;
-  height: 100vh;
-  inline-size: 1024px;
-  max-block-size: 768px;
+  display: block;
+  max-inline-size: 1024px;
+  block-size: 768px;
   margin-block-start: 20px;
   margin-right: 20px;
 }
@@ -26,7 +25,6 @@
   block-size: 25px;
   border-block-start: 1px solid var(--accent-color);
   border-right: 1px solid var(--accent-color);
-  margin-right: 20px;
 }
 
 .header::after {
@@ -34,10 +32,11 @@
   display: flex;
   align-self: end;
   position: absolute;
+  top: 723px;
   inline-size: 25px;
   block-size: 25px;
   border-block-end: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);;
+  border-left: 1px solid var(--accent-color);
   margin-block-end: 20px;
   margin-left: 20px;
 }
@@ -84,7 +83,6 @@
   line-height: 25px;
   color: var(--accent-color);
   text-transform: uppercase;
-  margin-right: 20px;
 }
 
 .decorated-zone__REC::after {
@@ -101,6 +99,8 @@
   align-self: center;
   max-inline-size: 759px;
   max-block-size: 130px;
+  position: absolute;
+  top: 263px;
   font-family: var(--main-font-family);
   font-weight: var(--title-font-weight);
   font-size: 157px;
@@ -124,7 +124,8 @@
   white-space: pre-line;
   max-inline-size: 491px;
   max-block-size: 71px;
-  margin-right: 20px;
+  top: 517px;
+  position: absolute;
 }
 
 .main {
@@ -385,7 +386,7 @@
   inline-size: 25px;
   block-size: 25px;
   border-block-end: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);;
+  border-left: 1px solid var(--accent-color);
   margin-block-end: 20px;
   margin-left: 20px;
 }
@@ -396,6 +397,10 @@
     block-size: 1024px;
   }
 
+  .header::after {
+    top: 979px;
+  }
+
   .header__theme-menu {
     display: flex;
     justify-content: end;
@@ -403,21 +408,24 @@
 
   .header__theme-menu-list {
     display: flex;
+    position: absolute;
     flex-direction: column;
     align-self: end;
-    margin-right: 20px;
+    top: 192px;
   }
 
   .decorated-zone__no-focus {
     max-inline-size: 577px;
     block-size: 99px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    top: 463px;
   }
 
   .decorated-zone__title {
     max-inline-size: 364px;
     max-block-size: 117px;
     align-self: center;
+    top: 724px;
   }
 
   .main {
@@ -452,7 +460,7 @@
     block-size: 281px;
   }
 
-  .text-section-group-why-dopamine  {
+  .text-section-group-why-dopamine {
     max-inline-size: 472px;
     block-size: 281px;
   }
@@ -509,6 +517,7 @@
   .section-card-how {
     max-inline-size: 768px;
     block-size: 1296px;
+    gap: 20px;
   }
 
   .title-section-how {
@@ -518,12 +527,17 @@
 
   .section-content-group-how {
     max-inline-size: 728px;
-    max-block-size: 1298px;
+    max-block-size: 1296px;
   }
 
   .main-title-section-group-how {
     max-inline-size: 472px;
     max-block-size: 23px;
+  }
+
+  .section-card-group-how-imagine {
+    max-inline-size: 472px;
+    max-block-size: 314px;
   }
 
   .title-section-group-how {
@@ -537,9 +551,19 @@
     max-block-size: 280px;
   }
 
+  .section-card-group-how-turn_it_on {
+    max-inline-size: 472px;
+    max-block-size: 198px;
+  }
+
   .text-section-group-turn_it_on {
     max-inline-size: 472px;
     max-block-size: 164px;
+  }
+
+  .section-card-group-how-take_a_walk {
+    max-inline-size: 472px;
+    max-block-size: 290px;
   }
 
   .text-section-group-take_a_walk {
@@ -547,9 +571,19 @@
     max-block-size: 257px;
   }
 
+  .section-card-group-how-eat_well {
+    max-inline-size: 472px;
+    max-block-size: 197px;
+  }
+
   .text-section-group-eat_well {
     max-inline-size: 472px;
     max-block-size: 163px;
+  }
+
+  .section-card-group-how-read_it {
+    max-inline-size: 472px;
+    max-block-size: 175px;
   }
 
   .text-section-group-read_it {
@@ -562,35 +596,32 @@
   .header {
     max-inline-size: 375px;
     max-block-size: 668px;
-  }
-
-  .header::before {
+    margin-block-start: 10px;
     margin-right: 10px;
   }
 
   .header::after {
     margin-left: 10px;
     margin-block-end: 0px;
+    top: 633px;
   }
 
   .header__theme-menu-list {
-    margin-right: 10px;
-  }
-
-  .decorated-zone__REC {
-    margin-right: 10px;
+    top: 75px;
   }
 
   .decorated-zone__no-focus {
     max-inline-size: 355px;
     block-size: 192px;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    top: 238px;
   }
 
   .decorated-zone__title {
     max-inline-size: 355px;
     max-block-size: 117px;
-    margin: 0px 10px;
+    margin-left: 10px;
+    top: 485px;
   }
 
   .main {
@@ -810,6 +841,14 @@
   .footer {
     max-inline-size: 375px;
     max-block-size: 668px;
+  }
+
+  .footer::before {
+    margin-right: 10px;
+  }
+
+  .footer::after {
+    margin-left: 10px;
   }
 
   .decorated-zone__focus {
