@@ -2,7 +2,7 @@
   --bg-image-dark: url(../images/cover-image-dark.png);
   --bg-image-light: url(../images/cover-image-light.png);
   --main-font-size: 18px;
-  --main-font-family: 'IBM Plex mono',sans-serif;
+  --main-font-family: 'IBM Plex mono',monospace;
   --title-font-weight: 700;
   --text-font-weight: 400;
   --bg-image: var(--bg-image-dark);
